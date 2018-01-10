@@ -10,10 +10,20 @@
     <title>Fourchon LNG</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet"
->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+
+    <!-- //shortcut keys to open admin login pages -->
+
+    <script type="text/javascript">
+        document.onkeyup=function(e){
+            var e = e || window.event;
+        if(e.altKey && e.which == 65) {
+             window.open("login.php");
+        }
+    }
+    </script>
   </head>
   <body>
 
