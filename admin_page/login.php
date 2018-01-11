@@ -5,7 +5,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
    }
 else
 {
-  header("location: index.php");
+  header("location: ../index.php");
    //it was not sent, perform your default actions here
 }
  ?>
