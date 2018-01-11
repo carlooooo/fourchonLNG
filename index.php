@@ -20,7 +20,7 @@
         document.onkeyup=function(e){
             var e = e || window.event;
         if(e.altKey && e.which == 65) {
-             window.open("login.php");
+             window.open("admin_page/login.php");
         }
     }
     </script>
