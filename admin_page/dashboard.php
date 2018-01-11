@@ -1,3 +1,4 @@
+<?php include 'sessionchk.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
