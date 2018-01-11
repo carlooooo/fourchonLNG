@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,11 +25,20 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Project Location</a>
+  <script type="text/javascript">
+      document.onkeyup=function(e){
+          var e = e || window.event;
+      if(e.altKey && e.which == 65) {
+           window.open("admin_page/login.php");
+      }
+  }
+  </script>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About LNG</a>
             </li>
             <li class="nav-item">
+
               <a class="nav-link" href="#">The FERC Process</a>
             </li>
             <li class="nav-item">
