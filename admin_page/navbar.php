@@ -1,6 +1,6 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-  <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+  <a class="navbar-brand" href="dashboard.php">Admin Dashboard</a>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -161,7 +161,7 @@
         <div class="dropdown-menu" aria-labelledby="messagesDropdown">
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">
-          <span>  <strong><a href="#">Change Password</a></strong></span>
+          <span>  <strong><a href="change-password.php">Change Password</a></strong></span>
           </a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">
