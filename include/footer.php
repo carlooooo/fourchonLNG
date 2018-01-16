@@ -49,11 +49,11 @@
                   <p>Subscribe to our newsletter.</p>
                   <p>
                     <form action="" method="post">
-                      <div class="input-group input-group-sm">
-                        <input type="email" id="semail" name="semail" class="form-control" placeholder="Email address" required>
+                      <div class="input-group">
+                        <input type="text" id="semail" name="semail" class="form-control" placeholder="Email address" required="true">
                         <span class="input-group-btn">
                           <!-- <input class="btn btn-default" type="submit" value=""><span class="glyphicon glyphicon-envelope"></span></button> -->
-                          <button id="submitTS" class="btn btn-primary btn-sm" type="button" onclick='return getvalues()'></span>Submit</button>
+                          <button id="submitTS" class="btn btn-primary btn-sm" type="button">Submit</button>
                           <!-- <span id="loading" style="display:none;"> -->
                           <img id="loading" style="display:none;" src="img/check-circle.gif" height="38px" width="35px"  />
                           <!-- </span> -->
@@ -69,40 +69,21 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- <script type="text/javascript">
-setTimeout(function() {
-  document.getElementById("loading").style.display='none'
-}, 10000);
-
-    window.onload = function () {
-      document.getElementById("submitTS").onclick = function () {
-        // show the loading image
-        var loading = document.getElementById("loading");
-        loading.style.display = "block";
-        setTimeout(hide, 5000);
-        submitTS.style.display = "none";
-        var xhr;
-        if (window.XMLHttpRequest) xhr = new XMLHttpRequest();    // all browsers except IE
-        else xhr = new ActiveXObject("Microsoft.XMLHTTP");      // for IE
-        xhr.open('GET', 'ajax.php', false);
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState===4 && xhr.status===200) {
-            var div = document.getElementById('update');
-            div.innerHTML = xhr.responseText;
-            // now hide the loading image
-            loading.style.display = "none";
-          }
-        }
-        xhr.send();
-      }
-    }
-    </script> -->
     <script>
 $( "#submitTS" ).click(function() {
+
+  var loading = document.getElementById("loading");
+  var submitTS = document.getElementById("submitTS");
+
+
+  var textBox = $('input:text').val();
+    if (textBox == "") {
+      return false;
+     }
+     else{
+
  getvalues();
 
-    var loading = document.getElementById("loading");
-    var submitTS = document.getElementById("submitTS");
 
      show = function(){
        loading.style.display = "block";
@@ -117,6 +98,7 @@ $( "#submitTS" ).click(function() {
 
 
      show();
+   }
 });
 </script>
 
