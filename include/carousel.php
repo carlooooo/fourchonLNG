@@ -6,15 +6,35 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active">
-        <img class="d-block img-fluid" src="img/slide1.jpg" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block img-fluid" src="img/slide1b.jpg" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block img-fluid" src="img/slide2.jpg" alt="third slide">
-      </div>
+<?php
+$files = glob("admin_page/upload/carousel/*.*");
+
+if(isset($files[0])){
+  $image = $files[0];
+  echo '<div class="carousel-item active">
+    <img class="d-block img-fluid max" src="'.$image.'" alt="">
+  </div>';
+
+  $files = glob("admin_page/upload/carousel/*.*");
+  for ($i=1; $i<count($files); $i++) {
+      $image = $files[$i];
+      echo '<div class="carousel-item">
+        <img style="height:350px" src="'.$image.'" alt="">
+      </div>';
+  }
+
+}
+else { ?>
+    <div class="carousel-item active">
+      <img class="d-block img-fluid" src="img/slide1.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="img/slide1b.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block img-fluid" src="img/slide2.jpg" alt="third slide">
+    </div>
+<?php } ?>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
