@@ -55,7 +55,7 @@ body {
 }
 
 .footer-bs .footer-nav ul.list { list-style:none; padding:0px; }
-.footer-bs .footer-nav ul.list li { padding:5px 0px;}
+.footer-bs .footer-nav ul.list li { padding:5px 0px;font-size: 13px;}
 .footer-bs .footer-nav ul.list a { color:rgba(255,255,255,0.80); }
 .footer-bs .footer-nav ul.list a:hover { color:rgba(255,255,255,0.60); text-decoration:none; }
 

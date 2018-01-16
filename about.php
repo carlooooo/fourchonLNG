@@ -7,8 +7,10 @@
   <body>
     <div class="container">
       <img class="img-fluid" src="img/slide3.jpg" alt="">
-      <h1 class="my-4">About LNG</h1>
+      <h3 class="my-4">About LNG</h3>
+
       <div class="row">
+
         <div class="col-md-12">
           <p>Liquefied natural gas (LNG) is natural gas that has been cooled to a liquid state, at about -260°Fahrenheit, for shipping and storage. The volume of natural gas in its liquid state is about 600 times smaller than its volume in its gaseous state. This process, which was developed in the 19th century, makes it possible to transport natural gas to places pipelines do not reach. </p>
           <p>Liquefying natural gas is a way to move natural gas long distances when pipeline transport is not feasible. Markets that are too far away from producing regions to be connected directly to pipelines have access to natural gas because of LNG. In its compact liquid form, natural gas can be shipped in special tankers to terminals in the United States and other countries. At these terminals, the LNG is returned to its gaseous state and transported by pipeline to distribution companies, industrial consumers, and power plants. </p>
