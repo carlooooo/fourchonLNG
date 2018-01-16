@@ -44,16 +44,16 @@
               </address>
 
             </div>
-            <div class="col-xs-6 col-sm-2 footer-ns animated fadeInRight">
+            <div class="col-xs-6 col-sm-3 footer-ns animated fadeInRight">
                 <h4>Newsletter</h4>
                   <p>Subscribe to our newsletter.</p>
                   <p>
                     <form action="" method="post">
-                      <div class="input-group">
-                        <input type="text" id="semail" name="semail" class="form-control" placeholder="Email address" required>
+                      <div class="input-group input-group-sm">
+                        <input type="email" id="semail" name="semail" class="form-control" placeholder="Email address" required>
                         <span class="input-group-btn">
                           <!-- <input class="btn btn-default" type="submit" value=""><span class="glyphicon glyphicon-envelope"></span></button> -->
-                          <button id="submitTS" class="btn btn-default" type="button" onclick='return getvalues()'>Submit</button>
+                          <button id="submitTS" class="btn btn-primary btn-sm" type="button" onclick='return getvalues()'></span>Submit</button>
                           <!-- <span id="loading" style="display:none;"> -->
                           <img id="loading" style="display:none;" src="img/check-circle.gif" height="38px" width="35px"  />
                           <!-- </span> -->

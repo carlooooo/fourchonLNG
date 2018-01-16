@@ -62,7 +62,7 @@
         </li>
       </ul>
     </div>
-    <a class="navbar-brand img-fuid" href="index.php"><img src="img/logo.png"></a>
+    <a class="navbar-brand" href="index.php"><img src="img/logo.png"></a>
   </div>
 </nav>
 <!--<div class="container" style="padding-top:20px">
