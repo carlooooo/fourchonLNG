@@ -16,7 +16,7 @@
       <div class="row">
 
 
-          <img class="img-fluid" src="img/750x500_projdesc.jpg" alt="">
+          <img class="img-fluid" src="img/slide1b.jpg" alt="">
 
 
         <div class="col-md-12">

@@ -15,8 +15,8 @@
 
           <p>Here is a list of Useful Links for the Fourchon LNG Project: </p>
           <ul>
-            <li><a href="https://ferc.gov">Energy Regulatory Website "FERC"</a></li>
-            <li><a href="http://portfourchon.com/">Greater Lafourch Port Authority</a></li>
+            <li><a href="https://ferc.gov" target="_blank">Energy Regulatory Website "FERC"</a></li>
+            <li><a href="http://portfourchon.com/" target="_blank">Greater Lafourch Port Authority</a></li>
           </ul>
         </div>
       </div>
