@@ -3,26 +3,18 @@
 <html lang="en">
 
 <?php include('include/header.php'); ?>
-
   <body>
     <div class="container">
-
       <!-- Portfolio Item Heading -->
-      <h1 class="my-4">Fourchon LNG:
+      <h3 class="my-4">Fourchon LNG:
         <small>Project Description</small>
-      </h1>
-
-      <!-- Portfolio Item Row -->
+      </h3>
+      <img class="img-fluid" src="img/slide1b.jpg" alt="">
       <div class="row">
-
-
-          <img class="img-fluid" src="img/slide1b.jpg" alt="">
-
-
         <div class="col-md-12">
-          <h3 class="my-3">Project Title: Fourchon LNG</h3>
-          <h3 class="my-3">Project Proponent: Fourchon LNG LLC.</h3>
-          <h3 class="my-3">Project Description: </h3>
+          <h4 class="my-3">Project Title: Fourchon LNG</h4>
+          <h4 class="my-3">Project Proponent: Fourchon LNG LLC.</h4>
+          <h4 class="my-3">Project Description: </h4>
           <p>Fourchon LNG proposes to site, construct, own, and operate a LNG liquefaction facility with a peak capacity of approximately five (5.0) million metric tons of LNG per annum (MTPA) and a ship berth on Belle Pass, Port Fourchon. The project will be developed in phases and the first phase will have a capacity of two (2.0) million MTPA, to be followed by the remaining LNG trains. The Project, which will utilize domestic sources of natural gas, will receive, liquefy, store, and deliver LNG to LNG carriers (LNGCs) for export in overseas markets and domestically to LNG fueled marine vessels.</p>
           <p>The principal Project facilities will include: up to ten (10) LNG trains each with an average base LNG production capacity of approximately 0.5 MTPA; pre-treatment facilities; two (2) LNG storage tanks (88,000 cubic meters (m3) each) and tank protection systems; one marine loading berth capable of receiving up to 180,000 cubic meter LNGCs; on-site electric power generation facilities. A short pipeline connection (totaling approximately 1 mile) to deliver feed gas to the terminal is planned to be designed and constructed by the operator, at Fourchon LNG cost.</p>
           <p>In addition to the general information about the project above, more specific information can be found on the following pages:</p>
