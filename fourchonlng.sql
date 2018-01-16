@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2018 at 10:34 AM
+-- Generation Time: Jan 16, 2018 at 10:18 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -21,18 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `fourchonlng`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `images`
---
-
-CREATE TABLE `images` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `imageName` longtext NOT NULL,
-  `imageData` longblob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -55,15 +43,30 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`id`, `email`, `password`, `usertype`, `fullname`) VALUES
 (1, 'admin@gold.com', '7bb0edd98f22430a03b67f853e83c2ca', 'admin', 'Admin');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `newsletter`
+--
+
+CREATE TABLE `newsletter` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `subscriber_email` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `newsletter`
+--
+
+INSERT INTO `newsletter` (`id`, `subscriber_email`) VALUES
+(41, 'slaaash.dc@gmail.com'),
+(43, 'asd@gmail.com'),
+(44, 'q@gmail.com'),
+(45, 'ash.dc@gmail.com');
+
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `images`
---
-ALTER TABLE `images`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `login`
@@ -72,20 +75,26 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `newsletter`
 --
+ALTER TABLE `newsletter`
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for table `images`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `newsletter`
+--
+ALTER TABLE `newsletter`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
