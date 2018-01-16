@@ -1,16 +1,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <?php include('include/header.php'); ?>
-
   <body>
     <div class="container">
-
+      <img class="img-fluid" src="img/slide5.jpg" alt="">
       <h1 class="my-4">Fourchon LNG: <small>Safety and The Environment</small></h1>
-
       <div class="row">
-
         <div class="col-md-12">
           <h3>Safety and The Environment:</h3>
           <p>At Fourchon LNG the environmental considerations of this project reflect the general principles of The Energy World Group. These principles include the promotion of clean power sources, and the construction of any projects to the highest applicable world environmental standards. </p>

@@ -6,7 +6,7 @@
 
   <body>
     <div class="container">
-
+      <img class="img-fluid" src="img/slide4.jpg" alt="">
       <h1 class="my-4">The FERC Process </br><small>FERC Process </small></h1>
 
       <div class="row">
