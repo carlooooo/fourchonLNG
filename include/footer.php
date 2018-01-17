@@ -1,4 +1,16 @@
-<footer class="footer-bs">
+<?php
+include 'config.php';
+$que = $db->query('SELECT MAX(theme_id) as color FROM web_themes');
+$que ->execute();
+$temp = $que->fetch(PDO::FETCH_ASSOC);
+$last =  $temp['color'];
+
+$q = $db->query("SELECT * FROM web_themes WHERE theme_id='$last'");
+$que ->execute();
+$row = $q->fetch(PDO::FETCH_ASSOC);
+
+?>
+<footer class="footer-bs" style="background-color: <?php echo "#".$row['theme_color']; ?>;">
       <div class="container">
         <div class="row">
           <div class="col-xs-6 col-sm-3 footer-brand animated fadeInLeft">
@@ -122,4 +134,3 @@ function getvalues(){
       });
 }
 </script>
-  

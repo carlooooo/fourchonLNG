@@ -59,13 +59,11 @@ $db = new db();
     </thead>
     <tbody class="row_position" >
 	<?php
-$name = $_GET['name'];
-	 $data_lists = $db->select('webcontent_home',"where webpage_name='".$name."' order by position_order asc");
+	 $data_lists = $db->select('webcontent_home',"order by position_order asc");
 	 foreach($data_lists as $data_list){
 	?>
       <tr id="<?php echo $data_list['position_id']; ?>" >
         <td><?php echo $data_list['position_description']; ?></td>
-          <td><?php $data_list['webpage_name']; ?></td>
       </tr>
 	 <?php } ?>
     </tbody>
@@ -75,5 +73,17 @@ $name = $_GET['name'];
 <input type="submit" class="btn btn-primary"   onClick="save();" />
 </div>
 
+<div class="container">
+<h3>Contact Us Contents</h3>
+<form action="webcontent/save_contact.php" method="post">
+<input type="text" class="form-control" name="project_name" placeholder="Project Name"><br>
+<input type="text" class="form-control" name="project_location" placeholder="Project Location"><br>
+<input type="text" class="form-control" name="project_director_name" placeholder="Project Director Name"><br>
+<input type="text" class="form-control" name="project_director_email" placeholder="Project Director Email"><br>
+<input type="text" class="form-control" name="ddministration_outreach_name" placeholder="Administration and Outreach Name"><br>
+<input type="text" class="form-control" name="ddministration_outreach_email" placeholder="Administration and Outreach Email"><br>
+<input type="submit"class="btn btn-primary" name="submit" value="Submit">
+</form>
+</div>
 </body>
 </html>
