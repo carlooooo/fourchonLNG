@@ -24,11 +24,25 @@
 
   $files = glob("upload/carousel/*.*");
 
-  for ($i=0; $i<count($files); $i++) {
-      $image = $files[$i];
-      echo '<a href="delete_carousel.php?delete='.$image.'"><img class="col-3 img-fluid confirmation" src="'.$image .'" alt="Random image" /></a>';
+  if(isset($files[0])){
+    for ($i=0; $i<count($files); $i++) {
+        $image = $files[$i];
+        echo '<a href="delete_carousel.php?delete='.$image.'"><img class="col-3 img-fluid confirmation" src="'.$image .'" alt="Random image" /></a>';
+    }
+
   }
+  else {
+    echo " <h1>No image found</h1>";
+echo "<script>
+    if (confirm('No image uploaded to the carousel. Do you want to upload an image?') == true) {
+        window.location.href = 'upload_carousel.php';
+    } else {
+      window.location.href = 'carousel_images.php';
+    }</script>";
+
+}
  ?>
+
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
 <?php include 'admin_footer.php'; ?>
