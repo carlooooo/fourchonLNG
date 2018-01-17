@@ -26,11 +26,21 @@
         <li class="breadcrumb-item">
           <a href="dashboard.php">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Web contents / Home Page</li>
+        <li class="breadcrumb-item active">Web contents / <?php echo $page = $_GET['name']; ?></li>
       </ol>
       <div class="row">
         <div class="col-12">
-          <?php include 'webcontent/index.php'; ?>
+          <?php
+          $page = $_GET['page'];
+          if ($page=='home') {
+          include 'webcontent/index.php';
+        }elseif ($page=='about') {
+        include 'webcontent/about.php';
+        }elseif ($page=='contact') {
+        include 'webcontent/contact.php';
+        }else{
+        include 'webcontent/color.php';
+        }?>
         </div>
       </div>
     </div>
@@ -61,7 +71,7 @@
     </div>
     <!-- Bootstrap core JavaScript-->
     <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
-    <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
     <!-- Custom scripts for all pages-->

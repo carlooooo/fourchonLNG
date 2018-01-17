@@ -12,7 +12,7 @@
           <span class="nav-link-text">Dashboard</span>
         </a>
       </li>
-      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+      <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
           <i class="fa fa-fw fa-wrench"></i>
           <span class="nav-link-text">Carousel</span>
@@ -25,37 +25,52 @@
             <a href="carousel_images.php">View images</a>
           </li>
         </ul>
-      </li>
+      </li> -->
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
           <i class="fa fa-fw fa-sitemap"></i>
           <span class="nav-link-text">Websites</span>
         </a>
         <ul class="sidenav-second-level collapse" id="collapseMulti">
+
+
+<?php include 'config.php';
+$stmt = $db->prepare("SELECT * FROM webpage_info");
+$stmt->execute();
+while($row = $stmt->fetch( PDO::FETCH_ASSOC )){
+
+$collapseMulti2 = "collapseMulti2".$row['id'];
+$collapseMulti3 = "collapseMulti3".$row['id'];
+$collapseMulti4 = "collapseMulti4".$row['id'];
+ ?>
+
           <li>
-            <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">GOLD</a>
-            <ul class="sidenav-third-level collapse" id="collapseMulti2">
+            <a class="nav-link-collapse collapsed" data-toggle="collapse" href="<?php echo '#'.$collapseMulti2;?>"><?php echo $row['webpage_name']; ?></a>
+            <ul class="sidenav-third-level collapse" id="<?php echo $collapseMulti2;?>">
 
               <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti3">Web contents</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti3">
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="<?php echo '#'.$collapseMulti3;?>">Web contents</a>
+              <ul class="sidenav-third-level collapse" id="<?php echo $collapseMulti3;?>">
               <li>
-                <a href="webcontents.php">Home</a>
+                <a href="webcontents.php?page=home&name=<?php echo $row['webpage_name']; ?>">Home</a>
               </li>
               <li>
-                <a href="carousel_images.php">About</a>
+                <a href="webcontents.php?page=about&name=<?php echo $row['webpage_name']; ?>">About</a>
+              </li>
+              <li>
+                <a href="webcontents.php?page=contact&name=<?php echo $row['webpage_name']; ?>">Contact Us</a>
               </li>
               </ul>
               </li>
 
               <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti4">Carousel</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti4">
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="<?php echo '#'.$collapseMulti4;?>">Carousel</a>
+              <ul class="sidenav-third-level collapse" id="<?php echo $collapseMulti4;?>">
               <li>
-                <a href="upload_carousel.php">Upload images</a>
+                <a href="upload_carousel.php?name=<?php echo $row['webpage_name']; ?>">Upload images</a>
               </li>
               <li>
-                <a href="carousel_images.php">View images</a>
+                <a href="carousel_images.php?name=<?php echo $row['webpage_name']; ?>">View images</a>
               </li>
               </ul>
               </li>
@@ -63,12 +78,22 @@
             </ul>
           </li>
 
-          <li>
+<?php } ?>
+
+
+
+
+
+
+
+
+
+          <!-- <li>
             <a href="#">EWC</a>
           </li>
           <li>
             <a href="#">EWI</a>
-          </li>
+          </li> -->
         </ul>
       </li>
     </ul>
