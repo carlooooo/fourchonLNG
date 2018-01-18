@@ -49,8 +49,8 @@ $db = new db();
 
 </head>
 <body>
-
-<div class="container">
+<div class="container row">
+<div class="col-sm-8">
   <table class="table">
     <thead>
       <tr>
@@ -70,9 +70,13 @@ $name = $_GET['name'];
 	 <?php } ?>
     </tbody>
   </table>
+  <div style="text-align:center;" >
+  <input type="submit" class="btn btn-primary"   onClick="save();" />
+  </div>
 </div>
-<div style="text-align:center;" >
-<input type="submit" class="btn btn-primary"   onClick="save();" />
+<div class="col-sm-2">
+<input type="text" name="" value="">
+</div>
 </div>
 
 </body>

@@ -47,10 +47,25 @@ $db = new db();
   }
   </style>
 
+  <script type="text/javascript">
+function readURL(input) {
+if (input.files && input.files[0]) {
+var reader = new FileReader();
+reader.onload = function (e) {
+    document.getElementById('preview').src=e.target.result;
+}
+reader.readAsDataURL(input.files[0]);
+}
+}
+
+</script>
+
 </head>
 <body>
 
 <div class="container">
+  <div class="row">
+  <div class="col-sm-8">
   <table class="table">
     <thead>
       <tr>
@@ -68,22 +83,38 @@ $db = new db();
 	 <?php } ?>
     </tbody>
   </table>
+  <div style="text-align:center;" >
+  <input type="submit" class="btn btn-primary"   onClick="save();" />
+  </div>
 </div>
-<div style="text-align:center;" >
-<input type="submit" class="btn btn-primary"   onClick="save();" />
+<center>
+<div class="col-sm-8" style="text-align:center;">
+  <b> Upload an Image </b><br><br>
+<img src="images/Background.png"  id="preview" name="preview" style="min-height:120px min-width:200px; max-height:120px" height="200" width="150" /><br>
+<input type="file" name="image" value="Upload Photo" onchange="readURL(this)"; required style="margin-top:15px;">
 </div>
-
-<div class="container">
-<h3>Contact Us Contents</h3>
-<form action="webcontent/save_contact.php" method="post">
-<input type="text" class="form-control" name="project_name" placeholder="Project Name"><br>
-<input type="text" class="form-control" name="project_location" placeholder="Project Location"><br>
-<input type="text" class="form-control" name="project_director_name" placeholder="Project Director Name"><br>
-<input type="text" class="form-control" name="project_director_email" placeholder="Project Director Email"><br>
-<input type="text" class="form-control" name="ddministration_outreach_name" placeholder="Administration and Outreach Name"><br>
-<input type="text" class="form-control" name="ddministration_outreach_email" placeholder="Administration and Outreach Email"><br>
-<input type="submit"class="btn btn-primary" name="submit" value="Submit">
-</form>
 </div>
+</div>
+</center>
 </body>
 </html>
+<?php
+            if(isset($_POST['change']))
+                {
+                    include'configdb1.php';
+              $imageName = $_FILES["image"]["name"];
+              $imageData = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+              $imageType = $_FILES["image"]["type"];
+                    if(substr($imageType,0,5) == "image")
+                        {
+         $stmt = $db->prepare("INSERT INTO navbackground (background) VALUES('$imageData')");
+         $stmt->execute();
+                            echo "Save Successfully";
+                        }
+                    else
+                        {
+                            echo "Only Images are allowed!";
+                        }
+                }
+
+        ?>
