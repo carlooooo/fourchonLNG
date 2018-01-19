@@ -1,7 +1,10 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include('include/header.php'); ?>
+<?php include('include/header.php');
+include"dbclass.php";
+$db = new db();
+?>
   <body>
     <!-- Page Content -->
     <div class="container">
@@ -9,9 +12,16 @@
       <div class="row">
         <div class="col-sm-8">
           <h3 class="mt-4">Fourchon LNG</h3>
-          <p>Please note:- this website is under development and will be updated on a regular basis as the project moves forward. </p>
+ <p>Please note:- this website is under development and will be updated on a regular basis as the project moves forward. </p>
           <p>Fourchon LNG is an exciting new project which will see the development of up to 5 million tons of Liquified Natural Gas (LNG) production per annum with associated storage and shipping facilities. </p>
           <p>LNG from the Fourchon LNG project will serve the American Domestic market first and then be available for Export. Fourchon LNG is committed to providing local employment and sourcing of USA manufactured equipment. </p>
+<!--           <?php
+        	 $data_lists = $db->select('webcontent_home',"order by position_order asc");
+        	 foreach($data_lists as $data_list){
+        	?> -->
+                <td><?php echo "<p>".$data_list['position_description']."</p>"; ?></td>
+              </tr>
+        	 <?php } ?>
           <!--<p>
             <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
           </p>-->
