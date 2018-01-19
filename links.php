@@ -6,12 +6,12 @@
     <div class="container">
       <img class="img-fluid" src="img/slide7.jpg" alt="">
       <div class="row">
-        <h1 class="my-4">Fourchon LNG - <small>Links</small></h1>
         <div class="col-md-12">
+          <h3 class="my-4">Fourchon LNG - <small>Links</small></h3>
           <p>Here is a list of Useful Links for the Fourchon LNG Project: </p>
           <ul>
-            <li><a href="https://ferc.gov" target="_blank">Energy Regulatory Website "FERC"</a></li>
-            <li><a href="http://portfourchon.com/" target="_blank">Greater Lafourch Port Authority</a></li>
+            <li><a href="https://ferc.gov" target="_blank">Federal Energy Regulatory Commission</a></li>
+            <li><a href="http://portfourchon.com/" target="_blank">Greater Lafourche Port Commission</a></li>
           </ul>
         </div>
       </div>
