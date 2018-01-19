@@ -1,5 +1,6 @@
 <?php
 include"dbclass.php";
+include'config.php';
 $db = new db();
 ?>
 <!DOCTYPE html>
@@ -32,7 +33,7 @@ $db = new db();
 	});
 
 	$.ajax({
-		url:"webcontent/ajax.php",
+		url:"webcontent/ajaxabout.php",
 		type:'post',
 		data:{position:data},
 		success:function(){
@@ -47,74 +48,74 @@ $db = new db();
   }
   </style>
 
-  <script type="text/javascript">
-function readURL(input) {
-if (input.files && input.files[0]) {
-var reader = new FileReader();
-reader.onload = function (e) {
-    document.getElementById('preview').src=e.target.result;
-}
-reader.readAsDataURL(input.files[0]);
-}
-}
-
-</script>
-
 </head>
 <body>
-
-<div class="container">
-  <div class="row">
+  <div class="container row">
   <div class="col-sm-8">
-  <table class="table">
-    <thead>
-      <tr>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody class="row_position" >
-	<?php
-	 $data_lists = $db->select('webcontent_home',"order by position_order asc");
-	 foreach($data_lists as $data_list){
-	?>
-      <tr id="<?php echo $data_list['position_id']; ?>" >
-        <td><?php echo $data_list['position_description']; ?></td>
-      </tr>
-	 <?php } ?>
-    </tbody>
-  </table>
-  <div style="text-align:center;" >
-  <input type="submit" class="btn btn-primary"   onClick="save();" />
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="row_position" >
+  	<?php
+  $name = $_GET['name'];
+  	 $data_lists = $db->select('webcontent_about',"where webpage_name='".$name."' order by position_order asc");
+  	 foreach($data_lists as $data_list){
+  	?>
+        <tr id="<?php echo $data_list['position_id']; ?>" >
+          <td><?php echo $data_list['position_description']; ?></td>
+            <td><?php $data_list['webpage_name']; ?></td>
+            <td><a href="webcontent/deleteaboutcontent.php?delete=<?php echo $data_list['position_id']; ?>">Delete</a></td>
+        </tr>
+  	 <?php } ?>
+      </tbody>
+    </table>
+    <div style="text-align:center;" >
+    <input type="submit" class="btn btn-primary"   onClick="save();" />
+    </div>
   </div>
-</div>
-<center>
-<div class="col-sm-8" style="text-align:center;">
-  <b> Upload an Image </b><br><br>
-<img src="images/Background.png"  id="preview" name="preview" style="min-height:120px min-width:200px; max-height:120px" height="200" width="150" /><br>
-<input type="file" name="image" value="Upload Photo" onchange="readURL(this)"; required style="margin-top:15px;">
-</div>
-</div>
-</div>
-</center>
-</body>
-</html>
-<?php
-            if(isset($_POST['change']))
-                {
-                    include'configdb1.php';
-              $imageName = $_FILES["image"]["name"];
-              $imageData = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-              $imageType = $_FILES["image"]["type"];
-                    if(substr($imageType,0,5) == "image")
-                        {
-         $stmt = $db->prepare("INSERT INTO navbackground (background) VALUES('$imageData')");
-         $stmt->execute();
-                            echo "Save Successfully";
-                        }
-                    else
-                        {
-                            echo "Only Images are allowed!";
-                        }
-                }
+  <div class="col-sm-2">
+    <b>Add new content</b>
+  <textarea id="home_content" name="home_content" rows="8" cols="80"></textarea>
+  <input type="hidden" name="hid" id="hid" value="<?php echo $name; ?>">
+  <input id="btnSend" name="btnSend" type="button" value="Send" class="btn btn-primary"/>
 
-        ?>
+  </div>
+  </div>
+
+  </body>
+  </html>
+
+
+  <script>
+  $("#btnSend").click(function() {
+  getvalues();
+  });
+  </script>
+
+  <script type="text/javascript">
+  function getvalues(){
+    var home_content = document.getElementsByName('home_content');
+    var hid = document.getElementsByName('hid');
+
+    var home_content1=home_content[0];
+    var home_content2 = home_content1.value;
+    var hid1=hid[0];
+    var hid2 = hid1.value;
+
+    var dataString  = 'home_content2=' + home_content2 +'&hid2=' + hid2;
+    jQuery.ajax({
+
+     type: "POST",
+     url: "webcontent/addcontentabout.php",
+    dataType:"text",
+    data:dataString,
+    async:false,
+    success:function(data){
+       window.location.reload();
+    }
+    });
+  }
+  </script>

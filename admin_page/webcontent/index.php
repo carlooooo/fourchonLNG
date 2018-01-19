@@ -32,7 +32,7 @@ $db = new db();
 	});
 
 	$.ajax({
-		url:"webcontent/ajax.php",
+		url:"webcontent/ajaxhome.php",
 		type:'post',
 		data:{position:data},
 		success:function(){
@@ -66,6 +66,7 @@ $name = $_GET['name'];
       <tr id="<?php echo $data_list['position_id']; ?>" >
         <td><?php echo $data_list['position_description']; ?></td>
           <td><?php $data_list['webpage_name']; ?></td>
+          <td><a href="webcontent/deletehomecontent.php?delete=<?php echo $data_list['position_id']; ?>">Delete</a></td>
       </tr>
 	 <?php } ?>
     </tbody>
@@ -75,9 +76,44 @@ $name = $_GET['name'];
   </div>
 </div>
 <div class="col-sm-2">
-<input type="text" name="" value="">
+  <b>Add new content</b>
+<textarea id="home_content" name="home_content" rows="8" cols="80"></textarea>
+<input type="hidden" name="hid" id="hid" value="<?php echo $name; ?>">
+<input id="btnSend" name="btnSend" type="button" value="Send" class="btn btn-primary"/>
+
 </div>
 </div>
 
 </body>
 </html>
+
+<script>
+$("#btnSend").click(function() {
+getvalues();
+});
+</script>
+
+<script type="text/javascript">
+function getvalues(){
+  var home_content = document.getElementsByName('home_content');
+  var hid = document.getElementsByName('hid');
+
+  var home_content1=home_content[0];
+  var home_content2 = home_content1.value;
+  var hid1=hid[0];
+  var hid2 = hid1.value;
+
+  var dataString  = 'home_content2=' + home_content2 +'&hid2=' + hid2;
+  jQuery.ajax({
+
+   type: "POST",
+   url: "webcontent/addcontenthome.php",
+  dataType:"text",
+  data:dataString,
+  async:false,
+  success:function(data){
+     window.location.reload();
+  }
+  });
+}
+</script>
