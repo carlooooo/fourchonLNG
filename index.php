@@ -12,7 +12,7 @@ $db = new db();
       <div class="row">
         <div class="col-sm-8">
           <h3 class="mt-4">Fourchon LNG</h3>
- <?php
+<?php
         	 $data_lists = $db->select('webcontent_home',"order by position_order asc");
         	 foreach($data_lists as $data_list){
         	?>

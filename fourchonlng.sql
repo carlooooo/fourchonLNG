@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2018 at 10:47 AM
+-- Generation Time: Jan 19, 2018 at 09:14 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -67,6 +67,20 @@ INSERT INTO `newsletter` (`id`, `subscriber_email`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `webcontent_about`
+--
+
+CREATE TABLE `webcontent_about` (
+  `position_id` int(10) NOT NULL,
+  `position_description` text NOT NULL,
+  `position_order` int(11) NOT NULL,
+  `position_status` enum('0','1') NOT NULL,
+  `webpage_name` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `webcontent_contactus`
 --
 
@@ -108,10 +122,9 @@ CREATE TABLE `webcontent_home` (
 --
 
 INSERT INTO `webcontent_home` (`position_id`, `position_description`, `position_order`, `position_status`, `webpage_name`) VALUES
-(1, 'Please note:- this website is under development and will be updated on a regular basis as the project moves forward.', 1, '1', 'GOLD'),
+(1, 'Please note:- this website is under development and will be updated on a regular basis as the project moves forward.', 2, '1', 'GOLD'),
 (2, 'Fourchon LNG is an exciting new project which will see the development of up to 5 million tons of Liquified Natural Gas (LNG) production per annum with associated storage and shipping facilities.', 3, '1', 'GOLD'),
-(3, 'LNG from the Fourchon LNG project will serve the American Domestic market first and then be available for Export. Fourchon LNG is committed to providing local employment and sourcing of USA manufactured equipment.', 2, '1', 'GOLD'),
-(4, 'Fourchon LNG invites the public to the South Lafourche Library at 16241 E. Main Street in Cut-Off, LA, for an open house on September 19th. The doors will be open from 5 p.m. to 7 p.m. This open house is being held to formally introduce the project to the public.', 4, '1', 'GOLD');
+(3, 'LNG from the Fourchon LNG project will serve the American Domestic market first and then be available for Export. Fourchon LNG is committed to providing local employment and sourcing of USA manufactured equipment.', 4, '1', 'GOLD');
 
 -- --------------------------------------------------------
 
@@ -132,6 +145,23 @@ INSERT INTO `webpage_info` (`id`, `webpage_name`) VALUES
 (1, 'GOLD'),
 (2, 'EWC'),
 (3, 'EWI');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `web_images`
+--
+
+CREATE TABLE `web_images` (
+  `image_id` int(10) UNSIGNED NOT NULL,
+  `proj_desc_image` longblob,
+  `about_image` longblob,
+  `process_image` longblob,
+  `safety_image` longblob,
+  `outreach_image` longblob,
+  `link_image` longblob,
+  `webpage_name` varchar(45) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -171,6 +201,12 @@ ALTER TABLE `newsletter`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `webcontent_about`
+--
+ALTER TABLE `webcontent_about`
+  ADD PRIMARY KEY (`position_id`);
+
+--
 -- Indexes for table `webcontent_contactus`
 --
 ALTER TABLE `webcontent_contactus`
@@ -187,6 +223,12 @@ ALTER TABLE `webcontent_home`
 --
 ALTER TABLE `webpage_info`
   ADD PRIMARY KEY (`id`,`webpage_name`);
+
+--
+-- Indexes for table `web_images`
+--
+ALTER TABLE `web_images`
+  ADD PRIMARY KEY (`image_id`);
 
 --
 -- Indexes for table `web_themes`
@@ -211,6 +253,12 @@ ALTER TABLE `newsletter`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
+-- AUTO_INCREMENT for table `webcontent_about`
+--
+ALTER TABLE `webcontent_about`
+  MODIFY `position_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `webcontent_contactus`
 --
 ALTER TABLE `webcontent_contactus`
@@ -220,13 +268,19 @@ ALTER TABLE `webcontent_contactus`
 -- AUTO_INCREMENT for table `webcontent_home`
 --
 ALTER TABLE `webcontent_home`
-  MODIFY `position_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `position_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `webpage_info`
 --
 ALTER TABLE `webpage_info`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `web_images`
+--
+ALTER TABLE `web_images`
+  MODIFY `image_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `web_themes`
