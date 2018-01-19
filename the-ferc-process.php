@@ -7,7 +7,7 @@
   <body>
     <div class="container">
       <img class="img-fluid" src="img/slide4.jpg" alt="">
-      <h3 class="my-4">The FERC Process </br><small>FERC Process </small></h3>
+      <h3 class="my-4">The FERC Process</h3>
 
       <div class="row">
 

@@ -6,9 +6,9 @@
   <body>
     <div class="container">
       <!-- Portfolio Item Heading -->
-      <h3 class="my-4">Fourchon LNG:
+      <!--<h3 class="my-4">Fourchon LNG:
         <small>Project Description</small>
-      </h3>
+      </h3>-->
       <img class="img-fluid" src="img/slide1b.jpg" alt="">
       <div class="row">
         <div class="col-md-12">
@@ -32,7 +32,7 @@
                       <div class="panel-body">
                         <p>The main benefits associated with the Project are summarized below.</p>
 
-                        <p>• Direct Job Creation/Employment Sustainability: This benefit is reflected in the need for up to 300 peak construction workers at the Terminal Site for the Phase I of Project over the 29-month construction timeframe and hundreds of off-site workers to support the Project in indirect . A similar peak number may be required for further 24 months during Phase II and in addition dozens of full time employees will be required to operate the Project facilities.</P>
+                        <p>• Direct Job Creation/Employment Sustainability: This benefit is reflected in the need for up to 300 peak construction workers at the Terminal Site for the Phase I of Project over the 29-month construction timeframe and hundreds of off-site workers to support the project indirectly. A similar peak number may be required for further 24 months during Phase II and in addition dozens of full time employees will be required to operate the Project facilities.</P>
 
                         <p>• National Security and Foreign Relations: The export of LNG will help improve economic trade and ties between the U.S. and destination countries, which could include nations in Asia and the Caribbean. LNG exports can have widespread geopolitical benefits, among which allowing access for American allies to diverse sources of Energy and reducing European reliance on Russian natural gas supplies.
 
