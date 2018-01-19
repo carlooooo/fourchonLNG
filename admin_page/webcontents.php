@@ -34,8 +34,18 @@
           $page = $_GET['page'];
           if ($page=='home') {
           include 'webcontent/index.php';
+        }elseif ($page=='desc') {
+        include 'webcontent/desc.php';
         }elseif ($page=='about') {
         include 'webcontent/about.php';
+        }elseif ($page=='pro') {
+        include 'webcontent/process.php';
+        }elseif ($page=='safe') {
+        include 'webcontent/safe.php';
+        }elseif ($page=='out') {
+        include 'webcontent/out.php';
+      }elseif ($page=='link') {
+        include 'webcontent/link.php';
         }elseif ($page=='contact') {
         include 'webcontent/contact.php';
         }else{

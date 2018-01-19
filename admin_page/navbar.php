@@ -42,6 +42,7 @@ while($row = $stmt->fetch( PDO::FETCH_ASSOC )){
 $collapseMulti2 = "collapseMulti2".$row['id'];
 $collapseMulti3 = "collapseMulti3".$row['id'];
 $collapseMulti4 = "collapseMulti4".$row['id'];
+$collapseMulti5 = "collapseMulti5".$row['id'];
  ?>
 
           <li>
@@ -55,10 +56,28 @@ $collapseMulti4 = "collapseMulti4".$row['id'];
                 <a href="webcontents.php?page=home&name=<?php echo $row['webpage_name']; ?>">Home</a>
               </li>
               <li>
+                <a href="webcontents.php?page=desc&name=<?php echo $row['webpage_name']; ?>">Description</a>
+              </li>
+              <li>
                 <a href="webcontents.php?page=about&name=<?php echo $row['webpage_name']; ?>">About</a>
               </li>
               <li>
+                <a href="webcontents.php?page=pro&name=<?php echo $row['webpage_name']; ?>">Process</a>
+              </li>
+              <li>
+                <a href="webcontents.php?page=safe&name=<?php echo $row['webpage_name']; ?>">Safe</a>
+              </li>
+              <li>
+                <a href="webcontents.php?page=out&name=<?php echo $row['webpage_name']; ?>">Outreach</a>
+              </li>
+              <li>
+                <a href="webcontents.php?page=link&name=<?php echo $row['webpage_name']; ?>">Links</a>
+              </li>
+              <li>
                 <a href="webcontents.php?page=contact&name=<?php echo $row['webpage_name']; ?>">Contact Us</a>
+              </li>
+              <li>
+                <a href="webcontents.php?page=color&name=<?php echo $row['webpage_name']; ?>">Theme Color</a>
               </li>
               </ul>
               </li>
@@ -71,6 +90,33 @@ $collapseMulti4 = "collapseMulti4".$row['id'];
               </li>
               <li>
                 <a href="carousel_images.php?name=<?php echo $row['webpage_name']; ?>">View images</a>
+              </li>
+              </ul>
+              </li>
+
+              <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="<?php echo '#'.$collapseMulti5;?>">Images</a>
+              <ul class="sidenav-third-level collapse" id="<?php echo $collapseMulti5;?>">
+              <li>
+                <a href="images.php?page=about&name=<?php echo $row['webpage_name'];?>">About</a>
+              </li>
+              <li>
+                <a href="images.php?page=desc&name=<?php echo $row['webpage_name'];?>">Description</a>
+              </li>
+              <li>
+                <a href="images.php?page=loc&name=<?php echo $row['webpage_name'];?>">Location</a>
+              </li>
+              <li>
+                <a href="images.php?page=proc&name=<?php echo $row['webpage_name'];?>">Process</a>
+              </li>
+              <li>
+                <a href="images.php?page=safe&name=<?php echo $row['webpage_name'];?>">Safe</a>
+              </li>
+              <li>
+                <a href="images.php?page=out&name=<?php echo $row['webpage_name'];?>">Outreach</a>
+              </li>
+              <li>
+                <a href="images.php?page=link&name=<?php echo $row['webpage_name'];?>">Links</a>
               </li>
               </ul>
               </li>
