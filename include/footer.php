@@ -1,11 +1,12 @@
 <?php
 include 'config.php';
-$que = $db->query('SELECT MAX(theme_id) as color FROM web_themes');
+$name = $_GET['name'];
+$que = $db->query("SELECT MAX(theme_id) as color FROM web_themes WHERE webpage_name='$name'");
 $que ->execute();
 $temp = $que->fetch(PDO::FETCH_ASSOC);
 $last =  $temp['color'];
 
-$q = $db->query("SELECT * FROM web_themes WHERE theme_id='$last'");
+$q = $db->query("SELECT * FROM web_themes WHERE theme_id='$last' AND webpage_name='$name'");
 $que ->execute();
 $row = $q->fetch(PDO::FETCH_ASSOC);
 

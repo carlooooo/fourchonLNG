@@ -1,4 +1,8 @@
-
+<!-- <script>
+    if(typeof window.history.pushState == 'function') {
+        window.history.pushState({}, "Hide", '<?php echo $_SERVER['PHP_SELF'];?>');
+    }
+</script> -->
 <!DOCTYPE html>
 <html lang="en">
 <?php include('include/header.php');
@@ -17,7 +21,8 @@ $db = new db();
           <p>LNG from the Fourchon LNG project will serve the American Domestic market first and then be available for Export. Fourchon LNG is committed to providing local employment and sourcing of USA manufactured equipment. </p>
           <p>Fourchon LNG invites the public to the South Lafourche Library at 16241 E. Main Street in Cut-Off, LA, for an open house on September 19th. The doors will be open from 5 p.m. to 7 p.m. This open house is being held to formally introduce the project to the public. </p> -->
           <?php
-        	 $data_lists = $db->select('webcontent_home',"order by position_order asc");
+          $name = $_GET['name'];
+        	 $data_lists = $db->select('webcontent_home',"where webpage_name='".$name."' order by position_order asc");
         	 foreach($data_lists as $data_list){
         	?>
                 <td><?php echo "<p>".$data_list['position_description']."</p>"; ?></td>
@@ -29,21 +34,36 @@ $db = new db();
         </div>
         <div class="col-sm-4">
              <h3 class="mt-4">Contact Us</h3>
-          <address>
-            <strong>Fourchon LNG LLC.</strong>
+
+            <?php
+            // contact_id, , project_location, proj_director_name, proj_director_email, admin_outreach_name, admin_outreach_email, webpage_name
+          	 $data_lists1 = $db->select('webcontent_contactus',"where webpage_name='".$name."'");
+          	 foreach($data_lists1 as $data_list1){
+          	?>
+                  <?php echo "<address><strong>".$data_list1['project_name']."</strong>"; ?>
+                  <br>
+            <!-- <strong>Fourchon LNG LLC.</strong>
             <br>2223 S 25th Street
             <br>Fort Pierce, Florida
-            <br>34986, USA
+            <br>34986, USA -->
+            <?php echo wordwrap($data_list1['project_location'], 20, "<br />\n"); ?>
             <br>
           </address>
           <address>
-            <strong>Graham Elliott - Project Director</strong>
+            <!-- <strong>Graham Elliott - Project Director</strong>
             <br><abbr title="Email">Email:</abbr>
             <a href="mailto:#">grahame@fourchonLNG.net</a>
             <br><br><strong>Chris Pope - Administration and Outreach</strong>
             <br><abbr title="Email">Email:</abbr>
-            <a href="mailto:#">outreach@fourchonLNG.net</a>
+            <a href="mailto:#">outreach@fourchonLNG.net</a> -->
+            <?php echo "<strong>".$data_list1['proj_director_name']." - Project Director</strong>"; ?>
+              <br><abbr title="Email">Email:</abbr>
+            <a href="mailto:#">  <?php echo $data_list1['proj_director_email']; ?></a>
+            <br><br><?php echo "<strong>".$data_list1['admin_outreach_name']." - Administration and Outreach</strong>"; ?>
+            <br><abbr title="Email">Email:</abbr>
+          <a href="mailto:#">  <?php echo $data_list1['admin_outreach_email']; ?></a>
           </address>
+          <?php } ?>
         </div>
       </div>
       <!-- /.row -->

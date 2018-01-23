@@ -1,0 +1,12 @@
+
+RewriteEngine On
+
+RewriteRule ^gold?$ index.php?name=gold
+RewriteRule ^ewg?$ index.php?name=ewg
+RewriteRule ^about/([a-zA-Z]+) about.php?name=$1
+RewriteRule ^outreach/([a-zA-Z]+)?$ community-outreach.php?name=$1
+RewriteRule ^gold?$ links.php?name=$1
+RewriteRule ^gold?$ project-description.php?name=$1
+RewriteRule ^gold?$ project-location.php?name=$1
+RewriteRule ^gold?$ safety-and-environment.php?name=$1
+RewriteRule ^gold?$ the-ferc-process.php?name=$1
