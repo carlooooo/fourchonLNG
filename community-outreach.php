@@ -7,7 +7,7 @@
   <body>
     <div class="container">
       <img class="img-fluid" src="img/slide6.jpg" alt="">
-      <h1 class="my-4">Fourchon LNG: <small>Community Outreach</small></h1>
+      <h3 class="my-4">Fourchon LNG: <small>Community Outreach</small></h3>
       <div class="row">
         <div class="col-md-12">
           <p>FOURCHON LNG OPEN HOUSE: SEPTEMBER 19, 2017</p>

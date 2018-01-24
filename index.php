@@ -23,14 +23,12 @@ $db = new db();
           <?php
           $name = $_GET['name'];
         	 $data_lists = $db->select('webcontent_home',"where webpage_name='".$name."' order by position_order asc");
+
         	 foreach($data_lists as $data_list){
         	?>
                 <td><?php echo "<p>".$data_list['position_description']."</p>"; ?></td>
               </tr>
         	 <?php } ?>
-          <!--<p>
-            <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
-          </p>-->
         </div>
         <div class="col-sm-4">
              <h3 class="mt-4">Contact Us</h3>
