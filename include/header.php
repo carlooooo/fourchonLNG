@@ -35,7 +35,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav m2-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.php?name=<?php echo $name; ?>">Home
+          <a class="nav-link" href="<?php echo $name; ?>">Home
             <!--<span class="sr-only">(current)</span>-->
           </a>
         </li>

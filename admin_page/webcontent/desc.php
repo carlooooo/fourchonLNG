@@ -60,13 +60,13 @@ $db = new db();
 	<?php
 $name = $_GET['name'];
 $page = $_GET['page'];
-	 $data_lists = $db->select('webcontent_desc',"where webpage_name='".$name."' order by desc_order asc");
+	 $data_lists = $db->select('webcontent_desc',"where webpage_name='".$name."' order by position_order asc");
 	 foreach($data_lists as $data_list){
 	?>
-      <tr id="<?php echo $data_list['desc_id']; ?>" >
-        <td><?php echo $data_list['desc_description']; ?></td>
+      <tr id="<?php echo $data_list['position_id']; ?>" >
+        <td><?php echo $data_list['position_description']; ?></td>
           <td><?php $data_list['webpage_name']; ?></td>
-          <td><a href="webcontent/deletecontent.php?page=<?php echo $page; ?>&delete=<?php echo $data_list['desc_id']; ?>">Delete</a></td>
+          <td><a href="webcontent/deletecontent.php?page=<?php echo $page; ?>&delete=<?php echo $data_list['position_id']; ?>">Delete</a></td>
       </tr>
 	 <?php } ?>
     </tbody>
@@ -83,6 +83,10 @@ $page = $_GET['page'];
 
 </div>
 </div>
+
+
+
+
 
 
 <div class="container row">
@@ -136,6 +140,9 @@ $page = $_GET['page'];
 </div>
 </div>
 
+
+
+
 </body>
 </html>
 
@@ -169,6 +176,9 @@ function getvalues(){
   });
 }
 </script>
+
+
+
 
 
 <script>

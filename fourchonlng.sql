@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2018 at 09:14 AM
+-- Generation Time: Jan 24, 2018 at 02:18 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -78,6 +78,13 @@ CREATE TABLE `webcontent_about` (
   `webpage_name` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `webcontent_about`
+--
+
+INSERT INTO `webcontent_about` (`position_id`, `position_description`, `position_order`, `position_status`, `webpage_name`) VALUES
+(12, 'q', 1, '1', 'GOLD');
+
 -- --------------------------------------------------------
 
 --
@@ -101,7 +108,53 @@ CREATE TABLE `webcontent_contactus` (
 
 INSERT INTO `webcontent_contactus` (`contact_id`, `project_name`, `project_location`, `proj_director_name`, `proj_director_email`, `admin_outreach_name`, `admin_outreach_email`, `webpage_name`) VALUES
 (1, 'Fourchon LNG LLC.', '2223 S 25th Street  Fort Pierce, Florida  34986, USA ', 'Graham Elliott', 'grahame@fourchonLNG.net ', 'Chris Pope', 'outreach@fourchonLNG.net', 'GOLD'),
-(2, 'Fourchon LNG LLC.', '2223 S 25th Street  Fort Pierce, Florida  34986, USA ', 'Graham Elliott', 'grahame@fourchonLNG.net ', 'Chris Pope', 'outreach@fourchonLNG.net', 'EWC');
+(2, 'Fourchon LNG LLC.', '2223 S 25th Street  Fort Pierce, Florida  34986, USA ', 'Graham Elliott', 'grahame@fourchonLNG.net ', 'Chris Pope', 'outreach@fourchonLNG.net', 'EWG');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `webcontent_desc`
+--
+
+CREATE TABLE `webcontent_desc` (
+  `desc_id` int(10) NOT NULL,
+  `desc_description` text NOT NULL,
+  `desc_order` int(11) NOT NULL,
+  `desc_status` enum('0','1') DEFAULT NULL,
+  `webpage_name` varchar(45) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `webcontent_desc`
+--
+
+INSERT INTO `webcontent_desc` (`desc_id`, `desc_description`, `desc_order`, `desc_status`, `webpage_name`) VALUES
+(21, 'q', 21, '1', 'GOLD'),
+(28, 'q', 28, '1', 'GOLD'),
+(26, 'qwe', 24, '1', 'GOLD'),
+(23, 'eeee', 23, '1', 'GOLD');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `webcontent_desc_bullet`
+--
+
+CREATE TABLE `webcontent_desc_bullet` (
+  `bullet_id` int(10) NOT NULL,
+  `bullet_title` varchar(120) NOT NULL DEFAULT '',
+  `bullet_description` text NOT NULL,
+  `webpage_name` varchar(45) NOT NULL DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `webcontent_desc_bullet`
+--
+
+INSERT INTO `webcontent_desc_bullet` (`bullet_id`, `bullet_title`, `bullet_description`, `webpage_name`) VALUES
+(14, 'q', 'q', 'GOLD'),
+(11, 'qwe', 'qwe', 'GOLD'),
+(16, '1', '1', 'GOLD');
 
 -- --------------------------------------------------------
 
@@ -122,9 +175,35 @@ CREATE TABLE `webcontent_home` (
 --
 
 INSERT INTO `webcontent_home` (`position_id`, `position_description`, `position_order`, `position_status`, `webpage_name`) VALUES
-(1, 'Please note:- this website is under development and will be updated on a regular basis as the project moves forward.', 2, '1', 'GOLD'),
-(2, 'Fourchon LNG is an exciting new project which will see the development of up to 5 million tons of Liquified Natural Gas (LNG) production per annum with associated storage and shipping facilities.', 3, '1', 'GOLD'),
-(3, 'LNG from the Fourchon LNG project will serve the American Domestic market first and then be available for Export. Fourchon LNG is committed to providing local employment and sourcing of USA manufactured equipment.', 4, '1', 'GOLD');
+(1, 'Please note:- this website is under development and will be updated on a regular basis as the project moves forward.', 1, '1', 'GOLD'),
+(2, 'Fourchon LNG is an exciting new project which will see the development of up to 5 million tons of Liquified Natural Gas (LNG) production per annum with associated storage and shipping facilities.', 2, '1', 'GOLD'),
+(22, 'LNG from the Fourchon LNG project will serve the American Domestic market first and then be available for Export. Fourchon LNG is committed to providing local employment and sourcing of USA manufactured equipment.', 3, '1', 'EWG');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `webcontent_process`
+--
+
+CREATE TABLE `webcontent_process` (
+  `position_id` int(10) NOT NULL,
+  `position_description` text NOT NULL,
+  `position_order` int(11) NOT NULL,
+  `position_status` enum('0','1') NOT NULL,
+  `webpage_name` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `webcontent_process`
+--
+
+INSERT INTO `webcontent_process` (`position_id`, `position_description`, `position_order`, `position_status`, `webpage_name`) VALUES
+(1, '1', 1, '1', 'GOLD'),
+(2, '2', 2, '1', 'GOLD'),
+(3, '3', 3, '1', 'GOLD'),
+(4, '4', 4, '1', 'GOLD'),
+(5, '5', 5, '1', 'GOLD'),
+(6, '6', 6, '1', 'GOLD');
 
 -- --------------------------------------------------------
 
@@ -171,18 +250,17 @@ CREATE TABLE `web_images` (
 
 CREATE TABLE `web_themes` (
   `theme_id` int(10) UNSIGNED NOT NULL,
-  `theme_color` varchar(45) NOT NULL DEFAULT ''
+  `theme_color` varchar(45) NOT NULL DEFAULT '',
+  `webpage_name` varchar(45) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `web_themes`
 --
 
-INSERT INTO `web_themes` (`theme_id`, `theme_color`) VALUES
-(1, '3FAB4A'),
-(2, '0F43AB'),
-(3, 'AB2567'),
-(4, 'EBCE3D');
+INSERT INTO `web_themes` (`theme_id`, `theme_color`, `webpage_name`) VALUES
+(5, 'AB2567', 'GOLD'),
+(6, '47FFAA', 'EWG');
 
 --
 -- Indexes for dumped tables
@@ -213,9 +291,27 @@ ALTER TABLE `webcontent_contactus`
   ADD PRIMARY KEY (`contact_id`);
 
 --
+-- Indexes for table `webcontent_desc`
+--
+ALTER TABLE `webcontent_desc`
+  ADD PRIMARY KEY (`desc_id`);
+
+--
+-- Indexes for table `webcontent_desc_bullet`
+--
+ALTER TABLE `webcontent_desc_bullet`
+  ADD PRIMARY KEY (`bullet_id`);
+
+--
 -- Indexes for table `webcontent_home`
 --
 ALTER TABLE `webcontent_home`
+  ADD PRIMARY KEY (`position_id`);
+
+--
+-- Indexes for table `webcontent_process`
+--
+ALTER TABLE `webcontent_process`
   ADD PRIMARY KEY (`position_id`);
 
 --
@@ -256,7 +352,7 @@ ALTER TABLE `newsletter`
 -- AUTO_INCREMENT for table `webcontent_about`
 --
 ALTER TABLE `webcontent_about`
-  MODIFY `position_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `position_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `webcontent_contactus`
@@ -265,10 +361,28 @@ ALTER TABLE `webcontent_contactus`
   MODIFY `contact_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `webcontent_desc`
+--
+ALTER TABLE `webcontent_desc`
+  MODIFY `desc_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `webcontent_desc_bullet`
+--
+ALTER TABLE `webcontent_desc_bullet`
+  MODIFY `bullet_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT for table `webcontent_home`
 --
 ALTER TABLE `webcontent_home`
-  MODIFY `position_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `position_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `webcontent_process`
+--
+ALTER TABLE `webcontent_process`
+  MODIFY `position_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `webpage_info`
@@ -286,7 +400,7 @@ ALTER TABLE `web_images`
 -- AUTO_INCREMENT for table `web_themes`
 --
 ALTER TABLE `web_themes`
-  MODIFY `theme_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `theme_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

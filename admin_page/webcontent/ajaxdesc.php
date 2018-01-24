@@ -8,7 +8,7 @@ foreach($position as $k=>$v){
 	    "position_order"=>$i
 	);
 
-	$db->update("webcontent_desc",$data,"where desc_id='".$v."'");
+	$db->update("webcontent_desc",$data,"where position_id='".$v."'");
 
 	$i++;
 }
