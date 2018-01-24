@@ -1,3 +1,4 @@
+<?php   $name = $_GET['name']; ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,35 +35,35 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav m2-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.php">Home
+          <a class="nav-link" href="index.php?name=<?php echo $name; ?>">Home
             <!--<span class="sr-only">(current)</span>-->
           </a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Project</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="project-description.php">Project Description</a>
-            <a class="dropdown-item" href="project-location.php">Project Location</a>
+            <a class="dropdown-item" href="project-description.php?name=<?php echo $name; ?>">Project Description</a>
+            <a class="dropdown-item" href="project-location.php?name=<?php echo $name; ?>">Project Location</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.php">About LNG</a>
+          <a class="nav-link" href="about.php?name=<?php echo $name; ?>">About LNG</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="the-ferc-process.php">The FERC Process</a>
+          <a class="nav-link" href="the-ferc-process.php?name=<?php echo $name; ?>">The FERC Process</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="safety-and-environment.php">Safety and the Environment</a>
+          <a class="nav-link" href="safety-and-environment.php?name=<?php echo $name; ?>">Safety and the Environment</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="community-outreach.php">Community Outreach</a>
+          <a class="nav-link" href="community-outreach.php?name=<?php echo $name; ?>">Community Outreach</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="links.php">Links</a>
+          <a class="nav-link" href="links.php?name=<?php echo $name; ?>">Links</a>
         </li>
       </ul>
     </div>
-    <a class="navbar-brand" href="index.php"><img src="img/logo.png"></a>
+    <a class="navbar-brand" href="index.php?name=<?php echo $name; ?>"><img src="img/logo.png"></a>
   </div>
 </nav>
 <!--<div class="container" style="padding-top:20px">

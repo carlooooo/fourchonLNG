@@ -24,7 +24,7 @@ Color: <input class="jscolor" value="ab2567" name="color">
 <?php
   if (isset($_POST['submit'])) {
       $col = $_POST['color'];
-      $sql = $db->prepare("INSERT INTO web_themes SET theme_color='$col'");
+      $sql = $db->prepare("INSERT INTO web_themes SET theme_color='$col', webpage_name='$name'");
       $sql   ->execute();
   }
 ?>

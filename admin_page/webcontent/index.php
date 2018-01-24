@@ -66,7 +66,7 @@ $name = $_GET['name'];
       <tr id="<?php echo $data_list['position_id']; ?>" >
         <td><?php echo $data_list['position_description']; ?></td>
           <td><?php $data_list['webpage_name']; ?></td>
-          <td><a href="webcontent/deletehomecontent.php?delete=<?php echo $data_list['position_id']; ?>">Delete</a></td>
+          <td><a href="webcontent/deletecontent.php?page=<?php echo $page; ?>&delete=<?php echo $data_list['position_id']; ?>">Delete</a></td>
       </tr>
 	 <?php } ?>
     </tbody>

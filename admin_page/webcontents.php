@@ -48,7 +48,7 @@
         include 'webcontent/link.php';
         }elseif ($page=='contact') {
         include 'webcontent/contact.php';
-        }else{
+      }elseif ($page=='color') {
         include 'webcontent/color.php';
         }?>
         </div>
