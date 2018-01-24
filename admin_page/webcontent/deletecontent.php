@@ -17,7 +17,7 @@ if ($page=='home') {
 }
 
 elseif ($page=='desc') {
-  $sql = $db->prepare("DELETE FROM webcontent_desc WHERE desc_id='$pid'");
+  $sql = $db->prepare("DELETE FROM webcontent_desc WHERE position_id='$pid'");
   if ($sql->execute()) {
     echo "<script>
       alert('Delete succesfully');
@@ -55,7 +55,7 @@ elseif ($page=='about') {
 }
 
 elseif ($page=='pro') {
-  $sql = $db->prepare("DELETE FROM webcontent_process WHERE process_id='$pid'");
+  $sql = $db->prepare("DELETE FROM webcontent_process WHERE position_id='$pid'");
   if ($sql->execute()) {
     echo "<script>
       alert('Delete succesfully');
