@@ -67,15 +67,39 @@ elseif ($page=='pro') {
 }
 
 elseif ($page=='safe') {
-include 'webcontent/safe.php';
+  $sql = $db->prepare("DELETE FROM webcontent_safety WHERE position_id='$pid'");
+  if ($sql->execute()) {
+    echo "<script>
+      alert('Delete succesfully');
+      window.history.go(-1);
+    </script>";
+  } else {
+      echo "Error deleting record ";
+  }
 }
 
 elseif ($page=='out') {
-include 'webcontent/out.php';
+  $sql = $db->prepare("DELETE FROM webcontent_outreach WHERE position_id='$pid'");
+  if ($sql->execute()) {
+    echo "<script>
+      alert('Delete succesfully');
+      window.history.go(-1);
+    </script>";
+  } else {
+      echo "Error deleting record ";
+  }
 }
 
 elseif ($page=='link') {
-include 'webcontent/link.php';
+  $sql = $db->prepare("DELETE FROM webcontent_link WHERE position_id='$pid'");
+  if ($sql->execute()) {
+    echo "<script>
+      alert('Delete succesfully');
+      window.history.go(-1);
+    </script>";
+  } else {
+      echo "Error deleting record ";
+  }
 }
 
 elseif ($page=='contact') {
