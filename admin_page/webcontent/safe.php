@@ -32,7 +32,7 @@ $db = new db();
 	});
 
 	$.ajax({
-		url:"webcontent/ajaxhome.php",
+		url:"webcontent/ajaxsafe.php",
 		type:'post',
 		data:{position:data},
 		success:function(){
@@ -60,7 +60,7 @@ $db = new db();
     <tbody class="row_position" >
 	<?php
 $name = $_GET['name'];
-	 $data_lists = $db->select('webcontent_home',"where webpage_name='".$name."' order by position_order asc");
+	 $data_lists = $db->select('webcontent_safety',"where webpage_name='".$name."' order by position_order asc");
 	 foreach($data_lists as $data_list){
 	?>
       <tr id="<?php echo $data_list['position_id']; ?>" >
@@ -77,7 +77,7 @@ $name = $_GET['name'];
 </div>
 <div class="col-sm-2">
   <b>Add new content</b>
-<textarea id="home_content" name="home_content" rows="8" cols="80"></textarea>
+<textarea id="safe_content" name="safe_content" rows="8" cols="80"></textarea>
 <input type="hidden" name="hid" id="hid" value="<?php echo $name; ?>">
 <input id="btnSend" name="btnSend" type="button" value="Send" class="btn btn-primary"/>
 
@@ -95,19 +95,19 @@ getvalues();
 
 <script type="text/javascript">
 function getvalues(){
-  var home_content = document.getElementsByName('home_content');
+  var safe_content = document.getElementsByName('safe_content');
   var hid = document.getElementsByName('hid');
 
-  var home_content1=home_content[0];
-  var home_content2 = home_content1.value;
+  var safe_content1=safe_content[0];
+  var safe_content2 = safe_content1.value;
   var hid1=hid[0];
   var hid2 = hid1.value;
 
-  var dataString  = 'home_content2=' + home_content2 +'&hid2=' + hid2;
+  var dataString  = 'safe_content2=' + safe_content2 +'&hid2=' + hid2;
   jQuery.ajax({
 
    type: "POST",
-   url: "webcontent/addcontenthome.php",
+   url: "webcontent/addcontentsafe.php",
   dataType:"text",
   data:dataString,
   async:false,

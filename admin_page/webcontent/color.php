@@ -12,11 +12,23 @@
 
 <div class="container">
 <h3>Theme Color</h3>
-<?php $name = $_GET['name']; ?>
+<?php
+include 'config.php';
+$name = $_GET['name'];
+$que = $db->prepare("SELECT * FROM web_themes WHERE webpage_name = '$name'");
+$que->execute();
+$count = $que->rowCount();
+$row = $que->fetch(PDO::FETCH_ASSOC);
+if ($count==0) {
+  $color = "ab2567";
+}else{
+    $color = $row['theme_color'];
+}
+?>
 <script src="jscolor.js"></script>
 <form action="" method="POST">
-Color: <input class="jscolor" value="ab2567" name="color">
-<input class="btn btn-primary" type="submit" name="submit" value="Choose">
+Color: <input class="jscolor" value="<?php echo $color; ?>" name="color">
+<input class="btn btn-primary" type="submit" name="submit" value="Choose" onclick="window.location.reload();">
 </form>
 </div>
 </body>
@@ -24,7 +36,20 @@ Color: <input class="jscolor" value="ab2567" name="color">
 <?php
   if (isset($_POST['submit'])) {
       $col = $_POST['color'];
-      $sql = $db->prepare("INSERT INTO web_themes SET theme_color='$col', webpage_name='$name'");
-      $sql   ->execute();
+      $que = $db->prepare("SELECT * FROM web_themes WHERE webpage_name = '$name'");
+      $que->execute();
+      $count = $que->rowCount();
+
+      if ($count==0) {
+        $stmt = $db->prepare("INSERT INTO web_themes SET theme_color='$col', webpage_name='$name'");
+        $stmt->execute();
+        echo "<script>alert('Save successfully')</script>";
+        echo "<meta http-equiv='refresh' content='0'>";
+      }else{
+        $stmt = $db->prepare("UPDATE web_themes SET theme_color='$col' WHERE webpage_name = '$name'");
+        $stmt->execute();
+        echo "<script>alert('Save successfully')</script>";
+        echo "<meta http-equiv='refresh' content='0'>";
+      }
   }
 ?>
