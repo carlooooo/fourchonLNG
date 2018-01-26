@@ -6,7 +6,7 @@
 
   <body>
     <div class="container">
-      <img class="img-fluid" src="about/img/slide3.jpg" alt="">
+      <img class="img-fluid" src="img/slide3.jpg" alt="">
       <h3 class="my-4">About LNG</h3>
 
       <div class="row">
