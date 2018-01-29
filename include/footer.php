@@ -1,4 +1,6 @@
 <?php
+// include"dbclass.php";
+$db1 = new db();
 include 'config.php';
 $name = $_GET['name'];
 $que = $db->query("SELECT MAX(theme_id) as color FROM web_themes WHERE webpage_name='$name'");
@@ -41,7 +43,47 @@ $row = $q->fetch(PDO::FETCH_ASSOC);
            </div>
           <div class="col-xs-2 col-sm-2 footer-ns animated fadeInRight">
               <h4>Contact Us</h4>
-              <address>
+
+
+
+
+
+              <?php
+              // contact_id, , project_location, proj_director_name, proj_director_email, admin_outreach_name, admin_outreach_email, webpage_name
+            	 $data_lists1 = $db1->select('webcontent_contactus',"where webpage_name='".$name."'");
+            	 foreach($data_lists1 as $data_list1){
+            	?>
+                    <?php echo "<p><address><strong>".$data_list1['project_name']."</strong>"; ?>
+                    <br>
+              <!-- <strong>Fourchon LNG LLC.</strong>
+              <br>2223 S 25th Street
+              <br>Fort Pierce, Florida
+              <br>34986, USA -->
+              <?php echo wordwrap($data_list1['project_location'], 20, "<br />\n"); ?>
+              <br></p>
+            </address>
+            <address>
+              <!-- <strong>Graham Elliott - Project Director</strong>
+              <br><abbr title="Email">Email:</abbr>
+              <a href="mailto:#">grahame@fourchonLNG.net</a>
+              <br><br><strong>Chris Pope - Administration and Outreach</strong>
+              <br><abbr title="Email">Email:</abbr>
+              <a href="mailto:#">outreach@fourchonLNG.net</a> -->
+              <?php echo "<p><strong>".$data_list1['proj_director_name']." - Project Director</strong>"; ?>
+                <br><abbr title="Email">Email:</abbr>
+              <a href="mailto:#">  <?php echo $data_list1['proj_director_email']; ?></a>
+              <br><br><?php echo "<strong>".$data_list1['admin_outreach_name']." - Administration and Outreach</strong>"; ?>
+              <br><abbr title="Email">Email:</abbr>
+            <a href="mailto:#">  <?php echo $data_list1['admin_outreach_email']; ?></a><p>
+            </address>
+            <?php } ?>
+
+
+
+
+
+
+              <!-- <address>
                 <p><strong>Fourchon LNG LLC.</strong>
                 <br>2223 S 25th Street
                 <br>Fort Pierce, Florida
@@ -54,7 +96,7 @@ $row = $q->fetch(PDO::FETCH_ASSOC);
                 <br>
                 <br><strong>Chris Pope</strong> <br> Administration and Outreach
                 <br><a href="mailto:#">outreach@fourchonLNG.net</a>
-              </address>
+              </address> -->
 
             </div>
             <div class="col-xs-6 col-sm-3 footer-ns animated fadeInRight">
