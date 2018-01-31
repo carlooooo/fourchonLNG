@@ -1,5 +1,6 @@
 
 RewriteEngine On
 
-RewriteRule ^gold?$ index.php?name=gold
+
+RewriteRule ^fourchonlng?$ index.php?name=fourchonlng
 RewriteRule ^ewg?$ index.php?name=ewg
