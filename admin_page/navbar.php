@@ -29,7 +29,7 @@
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
           <i class="fa fa-fw fa-sitemap"></i>
-          <span class="nav-link-text">Websites</span>
+          <span class="nav-link-text">Contents</span>
         </a>
         <ul class="sidenav-second-level collapse" id="collapseMulti">
 
