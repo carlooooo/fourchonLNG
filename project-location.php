@@ -2,7 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('include/header.php'); ?>
+<?php
+include('include/header.php');
+include('include/config.php');
+include"dbclass.php";
+$db7 = new db();
+?>
 
   <body>
     <div class="container">
